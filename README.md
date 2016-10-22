@@ -53,6 +53,30 @@ The extension operates in two modes:
 * `launch` - Launch an instance of Chrome and navigate to your app.
 * `attach` - Attach to a running instance of Chrome (with remote debugging enabled).
 
+## Debugging TypeScript code
+
 Now we are ready to debug our TypeScript application.
 
-## Debugging JavaScript code
+Pick a launch config from the dropdown on the Debug pane in VS Code. Press the play
+button or `F5` to start.
+
+The Chrome browser will start opening our application. You can then set watchers, breakpoints (or disable them), see the call stack, or examine local variables.
+
+![Set breakpoints](./99_readme_resources/debug-insert-breakpoints.png "Set breakpoints")
+
+![Set breakpoints](./99_readme_resources/debug-start.png "Set breakpoints")
+
+![Set breakpoints](./99_readme_resources/debug-in-action.png "Set breakpoints")
+
+You can step through the code using the debug menu in the top middle of VS Code.
+
+![Menu Options](./99_readme_resources/debug-toolbar.png "Menu Options")
+
+or using the following shortcuts keys:
+
+* `F5` continue
+* `F10` step over
+* `F11` step into
+* `SHIFT+F11` step out
+* `CTRL+SHIFT+F5` restart
+* `SHIFT+F5` stop
