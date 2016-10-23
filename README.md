@@ -6,6 +6,11 @@ To do this, we'll use [Debugger for chrome](https://github.com/Microsoft/vscode-
 a VS Code extension to debug JavaScript code in the Google Chrome browser, or other targets that support the
 [Chrome Debugging Protocol](https://chromedevtools.github.io/debugger-protocol-viewer/).
 
+The versions we are using at the time of writing this guide are:
+
+* VS Code v1.6.1
+* Debugger for Chrome v2.0.0
+
 ## Summary Steps
 
 1. Install `Debugger for chrome` extension.
@@ -80,3 +85,18 @@ or using the following shortcuts keys:
 * `SHIFT+F11` step out
 * `CTRL+SHIFT+F5` restart
 * `SHIFT+F5` stop
+
+## Known problems
+
+* If using a `launch` type config, close other running instances of Chrome - if Chrome
+ is already running, the extension may not be able to attach, when using launch mode.
+
+* If using an `attach` type config, ensure that you launched Chrome using `--remote-debugging-port=9222`.
+And if there was already a running instance.
+
+* For now, Chrome only allows one tool to be attached at a time. If you open Chrome Dev Tools,
+ it kills the connection with the extension.
+
+* If you set a breakpoint in code that runs immediately when the page loads, you won't hit that breakpoint until you refresh the page.
+
+* If you change your code, you may need to clear your breakpoints, then attach and then add breakpoints again.
